@@ -3,8 +3,14 @@
 A machine learning powered system that predicts whether a person is an **Introvert** or an **Extrovert** based on behavioral features.
 
 ## 🌍 Live Access
+- **Live Demo**: [https://bahasuru-naya.github.io/Introvert_Extrovert/](https://bahasuru-naya.github.io/Introvert_Extrovert/)
 - **Public API**: [https://personality-prediction-bahasuru-bre69.ondigitalocean.app](https://personality-prediction-bahasuru-bre69.ondigitalocean.app)
-- **Web Interface**: Open `frontend/index.html` in your browser.
+
+
+## 🧠 Core Components
+- **Training Notebook**: [`introvert-or-extrovert_notebook.ipynb`](./introvert-or-extrovert_notebook.ipynb) — Contains data analysis, model training, and evaluation logic.
+- **Model File**: [`personality_model.pkl`](./personality_model.pkl) — The serialized machine learning model used for real-time predictions.
+- **API Server**: [`app.py`](./app.py) — The Flask-based backend that powers the prediction API.
 
 ## 🚀 Features
 - **Machine Learning Integration**: Uses a pre-trained `joblib` model for predictions.
@@ -22,7 +28,7 @@ A machine learning powered system that predicts whether a person is an **Introve
 ## 📦 Getting Started
 
 ### 1. Web Frontend
-To use the visual interface, simply navigate to the `frontend` folder and open `index.html` in any modern web browser.
+To use the visual interface, simply open `index.html` in any modern web browser or visit the [Live Demo](https://bahasuru-naya.github.io/Introvert_Extrovert/).
 
 ### 2. Local API Development
 #### Clone the repository
