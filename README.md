@@ -1,37 +1,46 @@
-# Introvert vs Extrovert Personality Predictor API
+# Introvert vs Extrovert Personality Predictor
 
-A Flask-based REST API that predicts whether a person is an **Introvert** or an **Extrovert** based on behavioral features using a Machine Learning model.
+A machine learning powered system that predicts whether a person is an **Introvert** or an **Extrovert** based on behavioral features.
+
+## 🌍 Live Access
+- **Public API**: [https://personality-prediction-bahasuru-bre69.ondigitalocean.app](https://personality-prediction-bahasuru-bre69.ondigitalocean.app)
+- **Web Interface**: Open `frontend/index.html` in your browser.
 
 ## 🚀 Features
 - **Machine Learning Integration**: Uses a pre-trained `joblib` model for predictions.
-- **RESTful Endpoints**: Simple JSON-based interaction.
+- **Modern Web UI**: Beautiful glassmorphism design for easy data entry and visualization.
+- **RESTful Endpoints**: Simple JSON-based interaction for developers.
 - **Health Monitoring**: Includes a health check endpoint for deployment monitoring.
-- **Detailed Documentation**: Interactive home endpoint providing usage examples.
 
 ## 🛠️ Tech Stack
-- **Backend**: Flask (Python)
+- **Frontend**: HTML5, Vanilla CSS (Glassmorphism), JavaScript
+- **Backend**: Flask (Python) with Flask-CORS
 - **Data Handling**: Pandas
 - **Machine Learning**: Scikit-learn (Joblib for model loading)
-- **Deployment Ready**: Configured for platforms like Render or Heroku.
+- **Deployment**: Hosted on DigitalOcean
 
 ## 📦 Getting Started
 
-### 1. Clone the repository
+### 1. Web Frontend
+To use the visual interface, simply navigate to the `frontend` folder and open `index.html` in any modern web browser.
+
+### 2. Local API Development
+#### Clone the repository
 ```bash
 git clone https://github.com/bahasuru-naya/Introvert_Extrovert.git
 cd Introvert_Extrovert
 ```
 
-### 2. Install dependencies
+#### Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run the application
+#### Run the application
 ```bash
 python app.py
 ```
-The API will be available at `http://localhost:5000`.
+The local API will be available at `http://localhost:5000`.
 
 ## 🛣️ API Endpoints
 
@@ -48,17 +57,11 @@ The API will be available at `http://localhost:5000`.
 ### 3. Predict Personality
 - **URL**: `/predict`
 - **Method**: `POST`
-- **Body**:
-```json
-{
-    "Time_spent_Alone": 8.0,
-    "Stage_fear": 1,
-    "Social_event_attendance": 2.0,
-    "Going_outside": 2.0,
-    "Drained_after_socializing": 1,
-    "Friends_circle_size": 3.0,
-    "Post_frequency": 2.0
-}
+- **Example Curl**:
+```bash
+curl -X POST https://personality-prediction-bahasuru-bre69.ondigitalocean.app/predict \
+     -H "Content-Type: application/json" \
+     -d '{"Time_spent_Alone":8,"Stage_fear":1,"Social_event_attendance":2,"Going_outside":2,"Drained_after_socializing":1,"Friends_circle_size":3,"Post_frequency":2}'
 ```
 
 ## 📝 Field Descriptions

@@ -15,8 +15,10 @@ from flask import Flask, request, jsonify
 import pandas as pd
 import joblib
 import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app) # Enable CORS for all routes
 
 # Load model at startup
 MODEL_PATH = os.path.join(os.path.dirname(__file__), 'personality_model.pkl')

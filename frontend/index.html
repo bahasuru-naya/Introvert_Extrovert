@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personality Predictor | Introvert vs Extrovert</title>
+    <meta name="description" content="Discover your personality type using our advanced AI-powered predictor. Simple, fast, and accurate.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="hero">
+            <h1 id="main-title">Personality <span class="gradient-text">Predictor</span></h1>
+            <p class="subtitle">Answer a few questions to find out if you lean towards being an Introvert or an Extrovert.</p>
+        </header>
+
+        <section class="card-container">
+            <div class="glass-card" id="input-card">
+                <form id="prediction-form">
+                    <div class="form-grid">
+                        <!-- Time Spent Alone -->
+                        <div class="input-group">
+                            <label for="Time_spent_Alone">Time Spent Alone <span class="value-badge" id="val-alone">6h</span></label>
+                            <p class="input-desc">Average hours per day spent by yourself.</p>
+                            <input type="range" id="Time_spent_Alone" name="Time_spent_Alone" min="0" max="11" value="6" step="0.5">
+                        </div>
+
+                        <!-- Social Event Attendance -->
+                        <div class="input-group">
+                            <label for="Social_event_attendance">Social Events <span class="value-badge" id="val-social">2</span></label>
+                            <p class="input-desc">Events attended per month.</p>
+                            <input type="range" id="Social_event_attendance" name="Social_event_attendance" min="0" max="10" value="2">
+                        </div>
+
+                        <!-- Going Outside -->
+                        <div class="input-group">
+                            <label for="Going_outside">Going Outside <span class="value-badge" id="val-outside">3</span></label>
+                            <p class="input-desc">Times you leave the house per week.</p>
+                            <input type="range" id="Going_outside" name="Going_outside" min="0" max="7" value="3">
+                        </div>
+
+                        <!-- Friends Circle Size -->
+                        <div class="input-group">
+                            <label for="Friends_circle_size">Friend Circle <span class="value-badge" id="val-friends">4</span></label>
+                            <p class="input-desc">Number of close friends in your inner circle.</p>
+                            <input type="range" id="Friends_circle_size" name="Friends_circle_size" min="0" max="20" value="4">
+                        </div>
+
+                        <!-- Post Frequency -->
+                        <div class="input-group">
+                            <label for="Post_frequency">Social Media Posts <span class="value-badge" id="val-posts">1</span></label>
+                            <p class="input-desc">Posts on social media per week.</p>
+                            <input type="range" id="Post_frequency" name="Post_frequency" min="0" max="14" value="1">
+                        </div>
+
+                        <!-- Switches -->
+                        <div class="switch-row">
+                            <div class="switch-group">
+                                <label class="switch-label">
+                                    <span class="switch-text">Stage Fear</span>
+                                    <input type="checkbox" id="Stage_fear" name="Stage_fear">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                            <div class="switch-group">
+                                <label class="switch-label">
+                                    <span class="switch-text">Drained After Socializing</span>
+                                    <input type="checkbox" id="Drained_after_socializing" name="Drained_after_socializing" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="predict-btn" class="primary-btn">
+                        <span class="btn-text">Analyze Personality</span>
+                        <div class="loader" id="btn-loader"></div>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Result Card (Hidden by default) -->
+            <div class="glass-card result-card hidden" id="result-card">
+                <div class="result-header">
+                    <span class="result-tag">Your Result</span>
+                    <h2 id="prediction-result" class="prediction-text">Introvert</h2>
+                    <div class="confidence-container">
+                        <div class="confidence-bar-bg">
+                            <div id="confidence-bar" class="confidence-bar-fill"></div>
+                        </div>
+                        <span id="confidence-text">92% Confidence</span>
+                    </div>
+                </div>
+
+                <div class="probability-breakdown">
+                    <div class="prob-item">
+                        <span>Introvert</span>
+                        <span id="prob-introvert">92%</span>
+                    </div>
+                    <div class="prob-item">
+                        <span>Extrovert</span>
+                        <span id="prob-extrovert">8%</span>
+                    </div>
+                </div>
+
+                <button id="reset-btn" class="secondary-btn">Try Again</button>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>Powered by AI Personality Model &bull; Built with &hearts; for Bahasuru</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
