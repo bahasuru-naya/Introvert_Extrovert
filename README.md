@@ -2,11 +2,6 @@
 
 A machine learning powered system that predicts whether a person is an **Introvert** or an **Extrovert** based on behavioral features.
 
-## 🌍 Live Access
-- **Live Demo**: [https://bahasuru-naya.github.io/Introvert_Extrovert/](https://bahasuru-naya.github.io/Introvert_Extrovert/)
-- **Public API**: [https://personality-prediction-bahasuru-bre69.ondigitalocean.app](https://personality-prediction-bahasuru-bre69.ondigitalocean.app)
-
-
 ## 🧠 Core Components
 - **Training Notebook**: [`introvert-or-extrovert_notebook.ipynb`](./introvert-or-extrovert_notebook.ipynb) — Contains data analysis, model training, and evaluation logic.
 - **Model File**: [`personality_model.pkl`](./personality_model.pkl) — The serialized machine learning model used for real-time predictions.
@@ -28,7 +23,7 @@ A machine learning powered system that predicts whether a person is an **Introve
 ## 📦 Getting Started
 
 ### 1. Web Frontend
-To use the visual interface, simply open `index.html` in any modern web browser or visit the [Live Demo](https://bahasuru-naya.github.io/Introvert_Extrovert/).
+To use the visual interface, simply open `index.html` in any modern web browser.
 
 ### 2. Local API Development
 #### Clone the repository
@@ -65,7 +60,7 @@ The local API will be available at `http://localhost:5000`.
 - **Method**: `POST`
 - **Example Curl**:
 ```bash
-curl -X POST https://personality-prediction-bahasuru-bre69.ondigitalocean.app/predict \
+curl -X POST http://localhost:5000/predict \
      -H "Content-Type: application/json" \
      -d '{"Time_spent_Alone":8,"Stage_fear":1,"Social_event_attendance":2,"Going_outside":2,"Drained_after_socializing":1,"Friends_circle_size":3,"Post_frequency":2}'
 ```
@@ -81,6 +76,4 @@ curl -X POST https://personality-prediction-bahasuru-bre69.ondigitalocean.app/pr
 | `Friends_circle_size` | Number of close friends | Integer |
 | `Post_frequency` | Social media posts per week | Integer |
 
----
-**Author**: Bahasuru Nayanakantha  
-**Contact**: p.h.d.bahasuru@gmail.com
+

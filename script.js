@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnText.textContent = 'Analyzing...';
 
         try {
-            const response = await fetch('https://personality-prediction-bahasuru-bre69.ondigitalocean.app/predict', {
+            const response = await fetch('http://localhost:5000/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
